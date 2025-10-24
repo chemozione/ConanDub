@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "seg-000",
+      "start": 0.0,
+      "end": 1.5,
+      "speaker_id": "spk-test",
+      "character": "unknown",
+      "emotion": "neutral",
+      "text_ja": "テスト",
+      "text_it": null,
+      "audio_path": "tts\\seg-000.wav",
+      "speaker_embedding": [
+        0.0,
+        0.1,
+        -0.1
+      ]
+    }
+  ]
+}

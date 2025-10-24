@@ -1,0 +1,87 @@
+---
+description: |
+  Cursor agentic coding rules for the Detective Conan AI Dubbing System.
+  These rules map documentation and notebook files to generation actions,
+  ensuring the AI agents scaffold, implement, and validate each project phase
+  according to the corresponding Markdown specs.
+
+globs:
+  - "docs/**/*.md"
+  - "notebooks/**/*.md"
+  - "AGENTS.md"
+
+alwaysApply: true
+---
+
+# 🎬 Detective Conan AI Dubbing — Cursor Rules
+
+## Phase 1 — Preprocessing & Dataset Creation
+**Source:** `docs/01_preprocessing_dataset.md`  
+**Action:** `implement_phase1`
+
+> Implement dataset prep: separation, diarization (WhisperX + pyannote), face extraction, character seeding, emotion tagging, and manifest assembly.  
+> Use the document as the canonical spec; all code should live under:
+> ```
+> src/conan_dub/audio/
+> src/conan_dub/align/
+> src/conan_dub/vision/
+> src/conan_dub/charlink/
+> src/conan_dub/ser/
+> src/conan_dub/data/
+> ```
+
+---
+
+## Phase 2 — Model Training
+**Source:** `docs/02_model_training.md`  
+**Action:** `implement_phase2`
+
+> Implement Parakeet/Dia-style multispeaker Italian TTS with emotion conditioning.
+> Include dataset loaders, trainer stubs, and evaluation metrics gathering.
+
+---
+
+## Phase 3 — Dubbing & Synthesis
+**Source:** `docs/03_dubbing_synthesis.md`  
+**Action:** `implement_phase3`
+
+> Implement translation (JP→IT via NLLB), chunked synthesis, and final mixdown.
+> Outputs must match manifest timestamps and remain private per rights notice.
+
+---
+
+## Engineering Integrity
+**Source:** `docs/04_engineering_notes.md`  
+**Action:** `validate_integrity`
+
+> Enforce naming consistency, required WhisperX alignment, and remove pseudo-asserts.
+> Use this file as a checklist for refactors and unit-test verification.
+
+---
+
+## Codegen Scaffold
+**Source:** `docs/05_codegen_prompt.md`  
+**Action:** `generate_scaffold`
+
+> Feed this file directly to codegen agents to create `/src/conan_dub` layout,
+> CLI, and configuration scaffolds.  
+> Do **not** modify the text — treat it as immutable specification.
+
+---
+
+## Colab Notebook Execution
+**Source:** `notebooks/01_colab_starter.md`  
+**Action:** `execute_colab_cells`
+
+> Run and test the Colab starter flow; ensure compatibility with GPU and CPU paths.
+
+---
+
+## Agent Configuration
+**Source:** `AGENTS.md`  
+**Action:** `register_agents`
+
+> Use this to configure multi-agent roles (Architect, Data, Trainer, Synth, Doc).  
+> Enables collaborative execution and monitoring inside Cursor.
+
+---

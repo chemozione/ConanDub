@@ -1,0 +1,14 @@
+torch
+torchaudio
+transformers
+whisperx
+pyannote.audio
+datasets
+librosa
+soundfile
+opencv-python
+ffmpeg-python
+pandas
+pyyaml
+pyarrow
+tqdm

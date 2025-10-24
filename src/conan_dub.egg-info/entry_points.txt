@@ -1,0 +1,2 @@
+[console_scripts]
+conan-dub = conan_dub.cli.conan_dub:app

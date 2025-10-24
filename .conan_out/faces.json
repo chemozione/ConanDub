@@ -1,0 +1,14 @@
+{
+  "detections": [
+    {
+      "frame": "E:\\Dubber\\.conan_out\\frames\\frame_0001.txt",
+      "bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "confidence": 0.5
+    }
+  ]
+}

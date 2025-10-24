@@ -1,0 +1,46 @@
+paths:
+  whisperx_model: "medium"
+  pyannote_diarization: "pyannote/speaker-diarization-3.1"
+  pyannote_embedding: "pyannote/embedding"
+  nllb_model: "facebook/nllb-200-distilled-600M"
+  animeface_model: "animeface/onnx"
+  insightface_repo: "insightface/antelopev2"
+  ser_model: "superb/hubert-large-superb-er"
+  parakeet_dia_checkpoint: "checkpoints/parakeet_dia"
+
+audio:
+  default_separator: "vocal"
+  demucs_model: "htdemucs_ft"
+  uvr5_model: "UVR-MDX-NET-Remaster"
+  sample_rate: 48000
+  chunk_seconds: 30.0
+
+vision:
+  frame_fps: 2
+  lip_sync_method: "syncnet"
+  optical_flow_threshold: 0.35
+
+fusion:
+  lip_weight: 0.5
+  vision_weight: 0.3
+  diar_weight: 0.2
+  min_confidence: 0.4
+
+translation:
+  device: "auto"
+  max_length: 512
+
+tts:
+  engine: "parakeet_dia"
+  sample_rate: 22050
+  max_segment_seconds: 12.0
+  target_duration_tolerance: 0.15
+
+mixing:
+  loudness_lufs: -16.0
+  room_match: true
+  mux_tool: "ffmpeg"
+
+dry_run:
+  enabled: false
+  stub_audio_seconds: 1.5
